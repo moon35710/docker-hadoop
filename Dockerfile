@@ -12,7 +12,12 @@ RUN wget https://github.com/kiwenlau/compile-hadoop/releases/download/2.7.2/hado
     tar -xzvf hadoop-2.7.2.tar.gz && \
     mv hadoop-2.7.2 /usr/local/hadoop && \
     rm hadoop-2.7.2.tar.gz
-
+# install tomcat-7.0.78
+RUN wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-7/v7.0.78/bin/apache-tomcat-7.0.78.tar.gz && \
+	tar -xzvf apache-tomcat-7.0.78.tar.gz && \
+    mv apache-tomcat-7.0.78 /usr/local/tomcat-7.0.78 && \
+    rm apache-tomcat-7.0.78.tar.gz
+    
 # set environment variable
 ENV JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 
 ENV HADOOP_HOME=/usr/local/hadoop 
